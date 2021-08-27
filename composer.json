@@ -1,0 +1,52 @@
+{
+    "name": "your-name/cashier-bankname-technology",
+    "description": "Driver for payment with TECHNOLOGY codes via BankName (see andrey-helldar/cashier)",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "your-name",
+        "bank",
+        "billing",
+        "cashier"
+    ],
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your-email@example.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/your-name/cashier-bankname-technology/issues",
+        "source": "https://github.com/your-name/cashier-bankname-technology"
+    },
+    "require": {
+        "php": "^7.3|^8.0",
+        "your-name/cashier-bankname-auth": "^1.0",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "ext-json": "*",
+        "andrey-helldar/cashier": "^1.20",
+        "andrey-helldar/support": "^4.1",
+        "illuminate/database": "^6.0|^7.0|^8.0|^9.0",
+        "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0",
+        "phpunit/phpunit": "^9.0",
+        "symfony/var-dumper": "^4.0|^5.0|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "YourName\\CashierDriver\\BankName\\Technology\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
