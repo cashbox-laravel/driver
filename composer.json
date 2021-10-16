@@ -1,5 +1,5 @@
 {
-    "name": "your-name/cashier-bankname-technology",
+    "name": "andrey-helldar/cashier-driver",
     "description": "Driver for payment with TECHNOLOGY codes via BankName (see andrey-helldar/cashier)",
     "type": "library",
     "license": "MIT",
@@ -21,6 +21,7 @@
     },
     "require": {
         "php": "^7.3|^8.0",
+        "andrey-helldar/cashier-driver-auth": "^1.0",
         "psr/http-message": "^1.0"
     },
     "require-dev": {
@@ -47,5 +48,11 @@
         "sort-packages": true
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "github",
+            "url": "git@github.com:andrey-helldar/cashier-driver-auth.git"
+        }
+    ]
 }

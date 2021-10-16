@@ -11,6 +11,7 @@ use Helldar\Contracts\Cashier\Http\Request;
 use Helldar\Contracts\Cashier\Resources\Details;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Tests\database\seeders\DatabaseSeeder;
 use Tests\Fixtures\Models\ReadyPayment;
@@ -19,6 +20,8 @@ use YourName\CashierDriver\BankName\Technology\Driver;
 
 abstract class TestCase extends BaseTestCase
 {
+    use RefreshDatabase;
+
     public const PAYMENT_EXTERNAL_ID = '456789';
 
     public const PAYMENT_ID = '1234567890';
@@ -46,6 +49,13 @@ abstract class TestCase extends BaseTestCase
     protected $loadEnvironmentVariables = true;
 
     protected $model = ReadyPayment::class;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->loadMigrations();
+    }
 
     protected function getPackageProviders($app): array
     {
@@ -75,10 +85,10 @@ abstract class TestCase extends BaseTestCase
         ]);
     }
 
-    protected function defineDatabaseMigrations()
+    protected function loadMigrations(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->loadMigrationsFrom(__DIR__ . '/../vendor/your-name/cashier/database/migrations/main');
+        $this->loadMigrationsFrom(__DIR__ . '/../vendor/andrey-helldar/cashier/database/migrations/main');
     }
 
     protected function model(Details $details = null): ReadyPayment

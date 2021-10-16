@@ -2,7 +2,6 @@
 
 namespace YourName\CashierDriver\BankName\Technology;
 
-use Helldar\Cashier\Facades\Helpers\Model;
 use Helldar\Cashier\Services\Driver as BaseDriver;
 use Helldar\Contracts\Cashier\Http\Response;
 use YourName\CashierDriver\BankName\Technology\Exceptions\Manager;

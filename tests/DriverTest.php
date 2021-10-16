@@ -6,14 +6,11 @@ use Helldar\Cashier\Http\Response;
 use Helldar\Contracts\Cashier\Driver as DriverContract;
 use Helldar\Contracts\Cashier\Http\Response as ResponseContract;
 use Helldar\Support\Facades\Http\Url;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\Fixtures\Models\RequestPayment;
 use YourName\CashierDriver\BankName\Technology\Driver as Technology;
 
 class DriverTest extends TestCase
 {
-    use RefreshDatabase;
-
     protected $model = RequestPayment::class;
 
     protected function setUp(): void
