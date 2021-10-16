@@ -21,7 +21,6 @@
     },
     "require": {
         "php": "^7.3|^8.0",
-        "your-name/cashier-bankname-auth": "^1.0",
         "psr/http-message": "^1.0"
     },
     "require-dev": {
