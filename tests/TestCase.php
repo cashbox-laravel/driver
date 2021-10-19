@@ -6,21 +6,20 @@ use Helldar\Cashier\Config\Driver as DriverConfig;
 use Helldar\Cashier\Constants\Driver as DriverConstant;
 use Helldar\Cashier\Facades\Config\Payment as PaymentConfig;
 use Helldar\Cashier\Models\CashierDetail;
-use Helldar\Cashier\Providers\ServiceProvider;
 use Helldar\Contracts\Cashier\Http\Request;
 use Helldar\Contracts\Cashier\Resources\Details;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Tests\database\seeders\DatabaseSeeder;
+use Tests\Concerns\Database;
+use Tests\Concerns\TestServiceProvider;
 use Tests\Fixtures\Models\ReadyPayment;
 use Tests\Fixtures\Resources\Model;
 use YourName\CashierDriver\BankName\Technology\Driver;
 
 abstract class TestCase extends BaseTestCase
 {
-    use RefreshDatabase;
+    use Database;
 
     public const PAYMENT_EXTERNAL_ID = '456789';
 
@@ -46,20 +45,9 @@ abstract class TestCase extends BaseTestCase
 
     public const MODEL_STATUS_ID = 0;
 
-    protected $loadEnvironmentVariables = true;
-
-    protected $model = ReadyPayment::class;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->loadMigrations();
-    }
-
     protected function getPackageProviders($app): array
     {
-        return [ServiceProvider::class];
+        return [TestServiceProvider::class];
     }
 
     protected function getEnvironmentSetup($app)
@@ -85,28 +73,26 @@ abstract class TestCase extends BaseTestCase
         ]);
     }
 
-    protected function loadMigrations(): void
-    {
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->loadMigrationsFrom(__DIR__ . '/../vendor/andrey-helldar/cashier/database/migrations/main');
-    }
-
     protected function model(Details $details = null): ReadyPayment
     {
         $model = PaymentConfig::getModel();
 
         $payment = new $model();
 
-        return $payment->setRelation('cashier', $this->detailsRelation($payment, $details));
+        $cashier = $this->detailsRelation($payment, $details);
+
+        return $payment->setRelation('cashier', $cashier);
     }
 
     protected function detailsRelation(EloquentModel $model, ?Details $details): CashierDetail
     {
         $details = new CashierDetail([
-            'item_type'   => ReadyPayment::class,
+            'item_type' => ReadyPayment::class,
+
             'item_id'     => self::PAYMENT_ID,
             'external_id' => self::PAYMENT_EXTERNAL_ID,
-            'details'     => $details,
+
+            'details' => $details,
         ]);
 
         return $details->setRelation('parent', $model);
@@ -144,12 +130,5 @@ abstract class TestCase extends BaseTestCase
     protected function getTerminalSecret(): string
     {
         return config('cashier.drivers.driver_name.client_secret');
-    }
-
-    protected function runSeeders()
-    {
-        $seeder = new DatabaseSeeder();
-
-        $seeder->run();
     }
 }

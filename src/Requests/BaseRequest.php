@@ -10,9 +10,9 @@ use YourName\CashierDriver\BankName\Auth\Auth;
 
 abstract class BaseRequest extends Request
 {
-    protected $production_host = 'https://api-bank-uri.com';
+    protected $production_host = 'https://api.example.com';
 
-    protected $dev_host = 'https://dev.api-bank-uri.com';
+    protected $dev_host = 'https://dev.api.example.com';
 
     protected $auth = Auth::class;
 
@@ -27,14 +27,19 @@ abstract class BaseRequest extends Request
     public function getHttpOptions(): array
     {
         if (Main::isProduction()) {
-            return [
-                'cert' => [
-                    $this->model->getCertificatePath(),
-                    $this->model->getCertificatePassword(),
-                ],
-            ];
+            $cert = $this->getCertificateData();
+
+            return compact('cert');
         }
 
         return [];
+    }
+
+    protected function getCertificateData(): array
+    {
+        return [
+            $this->model->getCertificatePath(),
+            $this->model->getCertificatePassword(),
+        ];
     }
 }

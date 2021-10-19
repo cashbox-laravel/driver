@@ -8,6 +8,8 @@ class Cancel extends BaseRequest
 {
     protected $path = '/api/cancel';
 
+    protected $reload_relations = true;
+
     public function getRawBody(): array
     {
         return [

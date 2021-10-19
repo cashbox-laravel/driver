@@ -8,11 +8,6 @@ use Illuminate\Support\Carbon;
 /** @property \Tests\Fixtures\Models\ReadyPayment $model */
 class Model extends BaseModel
 {
-    public function getExternalId(): ?string
-    {
-        return $this->model->cashier->external_id;
-    }
-
     protected function paymentId(): string
     {
         return $this->model->uuid;

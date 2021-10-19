@@ -3,9 +3,11 @@
 namespace Tests;
 
 use Helldar\Cashier\Http\Response;
+use Helldar\Cashier\Services\Jobs;
 use Helldar\Contracts\Cashier\Driver as DriverContract;
 use Helldar\Contracts\Cashier\Http\Response as ResponseContract;
 use Helldar\Support\Facades\Http\Url;
+use Illuminate\Database\Eloquent\Model;
 use Tests\Fixtures\Models\RequestPayment;
 use YourName\CashierDriver\BankName\Technology\Driver as Technology;
 
@@ -13,16 +15,11 @@ class DriverTest extends TestCase
 {
     protected $model = RequestPayment::class;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->runSeeders();
-    }
-
     public function testStart()
     {
-        $response = $this->driver()->start();
+        $payment = $this->payment();
+
+        $response = $this->driver($payment)->start();
 
         $this->assertInstanceOf(Response::class, $response);
         $this->assertInstanceOf(ResponseContract::class, $response);
@@ -37,9 +34,11 @@ class DriverTest extends TestCase
 
     public function testCheck()
     {
-        $this->driver()->start();
+        $payment = $this->payment();
 
-        $response = $this->driver()->check();
+        Jobs::make($payment)->start();
+
+        $response = $this->driver($payment)->check();
 
         $this->assertInstanceOf(Response::class, $response);
         $this->assertInstanceOf(ResponseContract::class, $response);
@@ -56,9 +55,12 @@ class DriverTest extends TestCase
 
     public function testRefund()
     {
-        $this->driver()->start();
+        $payment = $this->payment();
 
-        $response = $this->driver()->refund();
+        Jobs::make($payment)->start();
+        Jobs::make($payment)->check(true);
+
+        $response = $this->driver($payment)->refund();
 
         $this->assertInstanceOf(Response::class, $response);
         $this->assertInstanceOf(ResponseContract::class, $response);
@@ -69,17 +71,10 @@ class DriverTest extends TestCase
         $this->assertSame('CANCELED', $response->getStatus());
     }
 
-    protected function driver(): DriverContract
+    protected function driver(Model $payment): DriverContract
     {
-        $model = $this->payment();
-
         $config = $this->config();
 
-        return Technology::make($config, $model);
-    }
-
-    protected function payment(): RequestPayment
-    {
-        return RequestPayment::firstOrFail();
+        return Technology::make($config, $payment);
     }
 }
