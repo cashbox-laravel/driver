@@ -9,7 +9,7 @@ use Helldar\Contracts\Cashier\Http\Response as ResponseContract;
 use Helldar\Support\Facades\Http\Url;
 use Illuminate\Database\Eloquent\Model;
 use Tests\Fixtures\Models\RequestPayment;
-use LaravelCashierProvider\Driver\BankName\Technology\Driver as Technology;
+use CashierProvider\BankName\Technology\Driver as Technology;
 
 class DriverTest extends TestCase
 {

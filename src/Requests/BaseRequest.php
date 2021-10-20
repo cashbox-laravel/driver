@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LaravelCashierProvider\Driver\BankName\Technology\Requests;
+namespace CashierProvider\BankName\Technology\Requests;
 
 use Helldar\Cashier\Facades\Config\Main;
 use Helldar\Cashier\Http\Request;
-use LaravelCashierProvider\Driver\BankName\Auth\Auth;
+use CashierProvider\BankName\Auth\Auth;
 
 abstract class BaseRequest extends Request
 {

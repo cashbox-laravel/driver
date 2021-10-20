@@ -5,7 +5,7 @@ namespace Tests\Resources;
 use Helldar\Cashier\Resources\Details as BaseDetails;
 use Helldar\Contracts\Cashier\Resources\Details as DetailsContract;
 use Tests\TestCase;
-use LaravelCashierProvider\Driver\BankName\Technology\Resources\Details;
+use CashierProvider\BankName\Technology\Resources\Details;
 
 class DetailsTest extends TestCase
 {

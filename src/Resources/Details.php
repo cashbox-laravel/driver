@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LaravelCashierProvider\Driver\BankName\Technology\Resources;
+namespace CashierProvider\BankName\Technology\Resources;
 
 use Helldar\Cashier\Resources\Details as BaseDetails;
 

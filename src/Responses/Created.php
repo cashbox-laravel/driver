@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LaravelCashierProvider\Driver\BankName\Technology\Responses;
+namespace CashierProvider\BankName\Technology\Responses;
 
 use Helldar\Cashier\Http\Response;
 

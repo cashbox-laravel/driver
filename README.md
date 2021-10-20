@@ -11,7 +11,7 @@
 To get the latest version of `BankName Technology Cashier Provider Driver`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require laravel-cashier-provider/driver-bankname-technology
+$ composer require cashier-provider/bankname-technology
 ```
 
 Or manually update `require` block of `composer.json` and run `composer update`.
@@ -19,7 +19,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 ```json
 {
     "require": {
-        "laravel-cashier-provider/driver-bankname-technology": "^1.0"
+        "cashier-provider/bankname-technology": "^1.0"
     }
 }
 ```
@@ -41,7 +41,7 @@ Add your driver information to the `config/cashier.php` file:
 use App\Models\Payment;
 use App\Payments\BankName as BankNameDetails;
 use Helldar\Cashier\Constants\Driver;
-use LaravelCashierProvider\Driver\BankName\Technology\Driver as BankNameDriver;
+use CashierProvider\BankName\Technology\Driver as BankNameDriver;
 
 return [
     'payment' => [

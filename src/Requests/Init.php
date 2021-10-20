@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LaravelCashierProvider\Driver\BankName\Technology\Requests;
+namespace CashierProvider\BankName\Technology\Requests;
 
 class Init extends BaseRequest
 {

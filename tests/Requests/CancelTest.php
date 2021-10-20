@@ -6,7 +6,7 @@ use Helldar\Cashier\Http\Request;
 use Helldar\Contracts\Cashier\Http\Request as RequestContract;
 use Helldar\Contracts\Http\Builder;
 use Tests\TestCase;
-use LaravelCashierProvider\Driver\BankName\Technology\Requests\Cancel;
+use CashierProvider\BankName\Technology\Requests\Cancel;
 
 class CancelTest extends TestCase
 {

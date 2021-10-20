@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelCashierProvider\Driver\BankName\Technology\Helpers;
+namespace CashierProvider\BankName\Technology\Helpers;
 
 use Helldar\Cashier\Services\Statuses as BaseStatus;
 

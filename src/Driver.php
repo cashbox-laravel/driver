@@ -1,18 +1,18 @@
 <?php
 
-namespace LaravelCashierProvider\Driver\BankName\Technology;
+namespace CashierProvider\BankName\Technology;
 
+use CashierProvider\BankName\Technology\Exceptions\Manager;
+use CashierProvider\BankName\Technology\Helpers\Statuses;
+use CashierProvider\BankName\Technology\Requests\Cancel;
+use CashierProvider\BankName\Technology\Requests\GetState;
+use CashierProvider\BankName\Technology\Requests\Init;
+use CashierProvider\BankName\Technology\Resources\Details;
+use CashierProvider\BankName\Technology\Responses\Created;
+use CashierProvider\BankName\Technology\Responses\Refund;
+use CashierProvider\BankName\Technology\Responses\State;
 use Helldar\Cashier\Services\Driver as BaseDriver;
 use Helldar\Contracts\Cashier\Http\Response;
-use LaravelCashierProvider\Driver\BankName\Technology\Exceptions\Manager;
-use LaravelCashierProvider\Driver\BankName\Technology\Helpers\Statuses;
-use LaravelCashierProvider\Driver\BankName\Technology\Requests\Cancel;
-use LaravelCashierProvider\Driver\BankName\Technology\Requests\GetState;
-use LaravelCashierProvider\Driver\BankName\Technology\Requests\Init;
-use LaravelCashierProvider\Driver\BankName\Technology\Resources\Details;
-use LaravelCashierProvider\Driver\BankName\Technology\Responses\Created;
-use LaravelCashierProvider\Driver\BankName\Technology\Responses\Refund;
-use LaravelCashierProvider\Driver\BankName\Technology\Responses\State;
 
 class Driver extends BaseDriver
 {
