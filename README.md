@@ -1,4 +1,4 @@
-# BankName Technology Cashier Driver
+# BankName Technology Cashier Provider Driver
 
 [![Stable Version][badge_stable]][link_packagist]
 [![Unstable Version][badge_unstable]][link_packagist]
@@ -8,10 +8,10 @@
 
 ## Installation
 
-To get the latest version of `BankName Technology Cashier Driver`, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version of `BankName Technology Cashier Provider Driver`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require your-name/cashier-bankname-technology
+$ composer require laravel-cashier-provider/driver-bankname-technology
 ```
 
 Or manually update `require` block of `composer.json` and run `composer update`.
@@ -19,7 +19,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 ```json
 {
     "require": {
-        "your-name/cashier-bankname-technology": "^1.0"
+        "laravel-cashier-provider/driver-bankname-technology": "^1.0"
     }
 }
 ```
@@ -41,7 +41,7 @@ Add your driver information to the `config/cashier.php` file:
 use App\Models\Payment;
 use App\Payments\BankName as BankNameDetails;
 use Helldar\Cashier\Constants\Driver;
-use YourName\CashierDriver\BankName\Technology\Driver as BankNameDriver;
+use LaravelCashierProvider\Driver\BankName\Technology\Driver as BankNameDriver;
 
 return [
     'payment' => [
@@ -196,15 +196,6 @@ $payment->cashier->details->toArray(): array
 //     'status' => 'NEW'
 // ]
 ```
-
-## For Enterprise
-
-Available as part of the Tidelift Subscription.
-
-The maintainers of `andrey-helldar/cashier` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you
-use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you
-use. [Learn more](https://tidelift.com/subscription/pkg/packagist-andrey-helldar-cashier?utm_source=packagist-andrey-helldar-cashier&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
-.
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/andrey-helldar/cashier.svg?style=flat-square
 

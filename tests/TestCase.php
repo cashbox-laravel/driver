@@ -15,7 +15,7 @@ use Tests\Concerns\Database;
 use Tests\Concerns\TestServiceProvider;
 use Tests\Fixtures\Models\ReadyPayment;
 use Tests\Fixtures\Resources\Model;
-use YourName\CashierDriver\BankName\Technology\Driver;
+use LaravelCashierProvider\Driver\BankName\Technology\Driver;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -99,7 +99,7 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * @param  \YourName\CashierDriver\BankName\Technology\Requests\BaseRequest|string  $request
+     * @param  \LaravelCashierProvider\Driver\BankName\Technology\Requests\BaseRequest|string  $request
      *
      * @return \Helldar\Contracts\Cashier\Http\Request
      */

@@ -9,7 +9,7 @@ use Helldar\Cashier\Exceptions\Http\ContactTheSellerClientException;
 use Helldar\Contracts\Http\Builder as HttpBuilder;
 use Helldar\Support\Facades\Http\Builder;
 use Tests\TestCase;
-use YourName\CashierDriver\BankName\Technology\Exceptions\Manager;
+use LaravelCashierProvider\Driver\BankName\Technology\Exceptions\Manager;
 
 class ExceptionTest extends TestCase
 {

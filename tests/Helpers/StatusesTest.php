@@ -3,8 +3,8 @@
 namespace Tests\Helpers;
 
 use Tests\TestCase;
-use YourName\CashierDriver\BankName\Technology\Helpers\Statuses;
-use YourName\CashierDriver\BankName\Technology\Resources\Details;
+use LaravelCashierProvider\Driver\BankName\Technology\Helpers\Statuses;
+use LaravelCashierProvider\Driver\BankName\Technology\Resources\Details;
 
 class StatusesTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\CashierDriver\BankName\Technology\Exceptions;
+namespace LaravelCashierProvider\Driver\BankName\Technology\Exceptions;
 
 use Helldar\Cashier\Exceptions\Http\BankInternalErrorException;
 use Helldar\Cashier\Exceptions\Http\BuyerNotFoundClientException;

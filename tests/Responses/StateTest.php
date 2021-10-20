@@ -5,7 +5,7 @@ namespace Tests\Responses;
 use Helldar\Cashier\Http\Response as BaseResponse;
 use Helldar\Contracts\Cashier\Http\Response;
 use Tests\TestCase;
-use YourName\CashierDriver\BankName\Technology\Responses\State;
+use LaravelCashierProvider\Driver\BankName\Technology\Responses\State;
 
 class StateTest extends TestCase
 {

@@ -5,7 +5,7 @@ namespace Tests\Responses;
 use Helldar\Cashier\Http\Response as BaseResponse;
 use Helldar\Contracts\Cashier\Http\Response;
 use Tests\TestCase;
-use YourName\CashierDriver\BankName\Technology\Responses\Refund;
+use LaravelCashierProvider\Driver\BankName\Technology\Responses\Refund;
 
 class RefundTest extends TestCase
 {

@@ -1,18 +1,18 @@
 <?php
 
-namespace YourName\CashierDriver\BankName\Technology;
+namespace LaravelCashierProvider\Driver\BankName\Technology;
 
 use Helldar\Cashier\Services\Driver as BaseDriver;
 use Helldar\Contracts\Cashier\Http\Response;
-use YourName\CashierDriver\BankName\Technology\Exceptions\Manager;
-use YourName\CashierDriver\BankName\Technology\Helpers\Statuses;
-use YourName\CashierDriver\BankName\Technology\Requests\Cancel;
-use YourName\CashierDriver\BankName\Technology\Requests\GetState;
-use YourName\CashierDriver\BankName\Technology\Requests\Init;
-use YourName\CashierDriver\BankName\Technology\Resources\Details;
-use YourName\CashierDriver\BankName\Technology\Responses\Created;
-use YourName\CashierDriver\BankName\Technology\Responses\Refund;
-use YourName\CashierDriver\BankName\Technology\Responses\State;
+use LaravelCashierProvider\Driver\BankName\Technology\Exceptions\Manager;
+use LaravelCashierProvider\Driver\BankName\Technology\Helpers\Statuses;
+use LaravelCashierProvider\Driver\BankName\Technology\Requests\Cancel;
+use LaravelCashierProvider\Driver\BankName\Technology\Requests\GetState;
+use LaravelCashierProvider\Driver\BankName\Technology\Requests\Init;
+use LaravelCashierProvider\Driver\BankName\Technology\Resources\Details;
+use LaravelCashierProvider\Driver\BankName\Technology\Responses\Created;
+use LaravelCashierProvider\Driver\BankName\Technology\Responses\Refund;
+use LaravelCashierProvider\Driver\BankName\Technology\Responses\State;
 
 class Driver extends BaseDriver
 {

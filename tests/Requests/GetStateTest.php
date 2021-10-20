@@ -6,7 +6,7 @@ use Helldar\Cashier\Http\Request;
 use Helldar\Contracts\Cashier\Http\Request as RequestContract;
 use Helldar\Contracts\Http\Builder;
 use Tests\TestCase;
-use YourName\CashierDriver\BankName\Technology\Requests\GetState;
+use LaravelCashierProvider\Driver\BankName\Technology\Requests\GetState;
 
 class GetStateTest extends TestCase
 {
