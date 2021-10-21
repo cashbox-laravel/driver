@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CashierProvider\BankName\Technology\Responses;
 
-use Helldar\Cashier\Http\Response;
+use CashierProvider\Core\Http\Response;
 
 class State extends Response
 {

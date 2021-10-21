@@ -2,7 +2,7 @@
 
 namespace CashierProvider\BankName\Technology\Helpers;
 
-use Helldar\Cashier\Services\Statuses as BaseStatus;
+use CashierProvider\Core\Services\Statuses as BaseStatus;
 
 class Statuses extends BaseStatus
 {

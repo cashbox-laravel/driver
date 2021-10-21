@@ -2,7 +2,7 @@
 
 namespace Tests\Resources;
 
-use Helldar\Cashier\Resources\Details as BaseDetails;
+use CashierProvider\Core\Resources\Details as BaseDetails;
 use Helldar\Contracts\Cashier\Resources\Details as DetailsContract;
 use Tests\TestCase;
 use CashierProvider\BankName\Technology\Resources\Details;

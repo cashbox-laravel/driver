@@ -2,7 +2,7 @@
 
 namespace Tests\Requests;
 
-use Helldar\Cashier\Http\Request;
+use CashierProvider\Core\Http\Request;
 use Helldar\Contracts\Cashier\Http\Request as RequestContract;
 use Helldar\Contracts\Http\Builder;
 use Tests\TestCase;

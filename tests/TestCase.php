@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use Helldar\Cashier\Config\Driver as DriverConfig;
-use Helldar\Cashier\Constants\Driver as DriverConstant;
-use Helldar\Cashier\Facades\Config\Payment as PaymentConfig;
-use Helldar\Cashier\Models\CashierDetail;
+use CashierProvider\Core\Config\Driver as DriverConfig;
+use CashierProvider\Core\Constants\Driver as DriverConstant;
+use CashierProvider\Core\Facades\Config\Payment as PaymentConfig;
+use CashierProvider\Core\Models\CashierDetail;
 use Helldar\Contracts\Cashier\Http\Request;
 use Helldar\Contracts\Cashier\Resources\Details;
 use Illuminate\Database\Eloquent\Model as EloquentModel;

@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Helldar\Cashier\Http\Response;
-use Helldar\Cashier\Services\Jobs;
+use CashierProvider\Core\Http\Response;
+use CashierProvider\Core\Services\Jobs;
 use Helldar\Contracts\Cashier\Driver as DriverContract;
 use Helldar\Contracts\Cashier\Http\Response as ResponseContract;
 use Helldar\Support\Facades\Http\Url;

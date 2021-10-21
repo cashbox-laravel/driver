@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CashierProvider\BankName\Technology\Resources;
 
-use Helldar\Cashier\Resources\Details as BaseDetails;
+use CashierProvider\Core\Resources\Details as BaseDetails;
 
 class Details extends BaseDetails
 {
