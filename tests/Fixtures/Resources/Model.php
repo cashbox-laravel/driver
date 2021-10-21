@@ -2,7 +2,7 @@
 
 namespace Tests\Fixtures\Resources;
 
-use Helldar\Cashier\Resources\Model as BaseModel;
+use CashierProvider\Core\Resources\Model as BaseModel;
 use Illuminate\Support\Carbon;
 
 /** @property \Tests\Fixtures\Models\ReadyPayment $model */

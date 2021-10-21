@@ -11,7 +11,7 @@ use CashierProvider\BankName\Technology\Resources\Details;
 use CashierProvider\BankName\Technology\Responses\Created;
 use CashierProvider\BankName\Technology\Responses\Refund;
 use CashierProvider\BankName\Technology\Responses\State;
-use Helldar\Cashier\Services\Driver as BaseDriver;
+use CashierProvider\Core\Services\Driver as BaseDriver;
 use Helldar\Contracts\Cashier\Http\Response;
 
 class Driver extends BaseDriver

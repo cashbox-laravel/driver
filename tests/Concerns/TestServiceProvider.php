@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Concerns;
 
-use Helldar\Cashier\Providers\ServiceProvider;
+use CashierProvider\Core\Providers\ServiceProvider;
 
 class TestServiceProvider extends ServiceProvider
 {
@@ -12,7 +12,7 @@ class TestServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom([
             __DIR__ . '/../database/migrations',
-            __DIR__ . '/../../vendor/andrey-helldar/cashier/database/migrations/main',
+            __DIR__ . '/../../vendor/cashier-provider/core/database/migrations/main',
         ]);
     }
 }

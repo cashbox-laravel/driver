@@ -28,7 +28,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 
 > **Note**:
 >
-> This project is the driver for [Cashier](https://github.com/your-name/cashier).
+> This project is the driver for [`Cashier Provider`](https://github.com/cashier-provider/core).
 >
 > Terminal Key and Secret must be provided by the bank manager in response to the agreement concluded with the bank.
 
@@ -40,8 +40,8 @@ Add your driver information to the `config/cashier.php` file:
 ```php
 use App\Models\Payment;
 use App\Payments\BankName as BankNameDetails;
-use Helldar\Cashier\Constants\Driver;
 use CashierProvider\BankName\Technology\Driver as BankNameDriver;
+use CashierProvider\Core\Constants\Driver;
 
 return [
     'payment' => [
@@ -64,14 +64,14 @@ return [
 
 ### Resource
 
-Create a model resource class inheriting from `Helldar\Cashier\Resources\Model` in your application.
+Create a model resource class inheriting from `CashierProvider\Core\Resources\Model` in your application.
 
 Use the `$this->model` link to refer to the payment model. When executed, the `$model` parameter will contain the payment instance.
 
 ```php
 namespace App\Payments;
 
-use Helldar\Cashier\Resources\Model;
+use CashierProvider\Core\Resources\Model;
 
 class BankName extends Model
 {
@@ -107,7 +107,7 @@ In order for the payment to be authorized with the required authorization data, 
 namespace App\Payments;
 
 use App\Models\Payment;
-use Helldar\Cashier\Resources\Model;
+use CashierProvider\Core\Resources\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 class BankName extends Model
@@ -160,7 +160,7 @@ class BankName extends Model
 
 ### Response
 
-All requests to the bank and processing of responses are carried out by the [`Cashier`](https://github.com/your-name/cashier) project.
+All requests to the bank and processing of responses are carried out by the [`Cashier Provider`](https://github.com/cashier-provider/core) project.
 
 To get a link, contact him through the cast:
 
@@ -197,14 +197,14 @@ $payment->cashier->details->toArray(): array
 // ]
 ```
 
-[badge_downloads]:      https://img.shields.io/packagist/dt/andrey-helldar/cashier.svg?style=flat-square
+[badge_downloads]:      https://img.shields.io/packagist/dt/cashier-provider/core.svg?style=flat-square
 
-[badge_license]:        https://img.shields.io/packagist/l/andrey-helldar/cashier.svg?style=flat-square
+[badge_license]:        https://img.shields.io/packagist/l/cashier-provider/core.svg?style=flat-square
 
-[badge_stable]:         https://img.shields.io/github/v/release/andrey-helldar/cashier?label=stable&style=flat-square
+[badge_stable]:         https://img.shields.io/github/v/release/cashier-provider/core?label=stable&style=flat-square
 
 [badge_unstable]:       https://img.shields.io/badge/unstable-dev--main-orange?style=flat-square
 
 [link_license]:         LICENSE
 
-[link_packagist]:       https://packagist.org/packages/andrey-helldar/cashier
+[link_packagist]:       https://packagist.org/packages/cashier-provider/core

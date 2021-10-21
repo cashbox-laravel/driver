@@ -2,10 +2,10 @@
 
 namespace Tests\Helpers;
 
-use Helldar\Cashier\Exceptions\Http\BadRequestClientException;
-use Helldar\Cashier\Exceptions\Http\BaseException;
-use Helldar\Cashier\Exceptions\Http\BuyerNotFoundClientException;
-use Helldar\Cashier\Exceptions\Http\ContactTheSellerClientException;
+use CashierProvider\Core\Exceptions\Http\BadRequestClientException;
+use CashierProvider\Core\Exceptions\Http\BaseException;
+use CashierProvider\Core\Exceptions\Http\BuyerNotFoundClientException;
+use CashierProvider\Core\Exceptions\Http\ContactTheSellerClientException;
 use Helldar\Contracts\Http\Builder as HttpBuilder;
 use Helldar\Support\Facades\Http\Builder;
 use Tests\TestCase;

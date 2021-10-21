@@ -2,7 +2,7 @@
 
 namespace Tests\Responses;
 
-use Helldar\Cashier\Http\Response as BaseResponse;
+use CashierProvider\Core\Http\Response as BaseResponse;
 use Helldar\Contracts\Cashier\Http\Response;
 use Tests\TestCase;
 use CashierProvider\BankName\Technology\Responses\State;
