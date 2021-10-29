@@ -1,4 +1,6 @@
-# BankName Technology Cashier Provider Driver
+# BankName Technology Cashier Driver
+
+<img src="https://preview.dragon-code.pro/cashier-provider/driver-template.svg?brand=laravel" alt="Cashier Driver Template"/>
 
 [![Stable Version][badge_stable]][link_packagist]
 [![Unstable Version][badge_unstable]][link_packagist]
@@ -8,7 +10,7 @@
 
 ## Installation
 
-To get the latest version of `BankName Technology Cashier Provider Driver`, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version of `BankName Technology Cashier Driver`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require cashier-provider/bankname-technology
