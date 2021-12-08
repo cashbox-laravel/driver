@@ -21,7 +21,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 ```json
 {
     "require": {
-        "cashier-provider/bankname-technology": "^1.0"
+        "cashier-provider/bankname-technology": "^2.0"
     }
 }
 ```
