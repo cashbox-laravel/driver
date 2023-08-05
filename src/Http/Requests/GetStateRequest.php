@@ -15,24 +15,16 @@
 
 declare(strict_types=1);
 
-namespace Cashbox\BankName\Technology\Resources;
+namespace Cashbox\BankName\Technology\Http\Requests;
 
-use Cashbox\Core\Resources\Details as BaseDetails;
-
-class Details extends BaseDetails
+class GetStateRequest extends BaseRequest
 {
-    protected $url;
+    protected string $productionUri = '/v1/state';
 
-    public function getUrl(): ?string
-    {
-        return $this->url;
-    }
-
-    public function toArray(): array
+    public function body(): array
     {
         return [
-            'status' => $this->status,
-            'url'    => $this->url,
+            'PaymentId' => $this->resource->payment->cashbox->external_id,
         ];
     }
 }
