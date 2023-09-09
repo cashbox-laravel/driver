@@ -23,6 +23,6 @@ abstract class TemplateDriverResource extends Resource
 {
     public function someIdentifier(): ?string
     {
-        return $this->config->credentials->extra['some_id'] ?? null;
+        return (string) $this->config->credentials->extra['some_id'] ?? null;
     }
 }
